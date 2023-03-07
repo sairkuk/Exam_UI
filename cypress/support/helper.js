@@ -1,5 +1,5 @@
 
-export function openLogiPage(){
+export function openLoginPage(){
     cy.log('**Open website registration**')
     cy.visit('/')
     cy.get('[color="primary"].mat-focus-indicator ').click()
