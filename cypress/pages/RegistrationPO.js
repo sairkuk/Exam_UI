@@ -14,10 +14,10 @@ openRegform(){
 
 fillFields(){
     cy.log('Fill Email');
-    cy.get('.mat-form-field-infix.ng-tns-c119-13').type(user.email)//.should('have.value', user.email);
+    cy.get('#emailControl').type(user.email)//.should('have.value', user.email);
 
     cy.log('Fill Password');
-    cy.get('.mat-form-field-infix.ng-tns-c119-14').type(user.password)//.should('have.value', user.password);
+    cy.get('#passwordControl').type(user.password)//.should('have.value', user.password);
 
     cy.log('Fill repeat Password')
     cy.get('#repeatPasswordControl').type(user.password).should('have.value', user.password);
@@ -27,7 +27,7 @@ fillFields(){
     cy.get('.mat-option-text').eq(1).click()
 
     cy.log('Answer questions')
-    cy.get('.mat-form-field-infix.ng-tns-c119-18').type(user.answer)//.should('have.value', user.answer)
+    cy.get('#securityAnswerControl').type(user.answer)//.should('have.value', user.answer)
 
 }
 
