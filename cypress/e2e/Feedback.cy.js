@@ -17,6 +17,6 @@ describe('Exam_UI', () => {
         FeedbackPO.rating();
         FeedbackPO.captcha();
         FeedbackPO.submitButton();
-        FeedbackPO.submitButton();   
+        FeedbackPO.checkSendFeedback();   
     })
   })

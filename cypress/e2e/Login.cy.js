@@ -12,4 +12,23 @@ describe('Exam_UI', () => {
     LoginWithUser.clickLoginButton();
     LoginWithUser.checkLoginWithUser();
   })
+
+  it('Negative test. Empy Psw and Email', ()=>{
+    openLoginPage();
+    LoginWithUser.negativeTestCheckError()
+  })
+
+  it('Negative test. Empy Email', ()=>{
+    openLoginPage();
+    LoginWithUser.fillPassword();
+    LoginWithUser.negativeTestCheckError()
+  })
+
+  it('Negative test. Empy Password', ()=>{
+    openLoginPage();
+    LoginWithUser.fillEmail();
+    LoginWithUser.negativeTestCheckError()
+  })
+
+
 })

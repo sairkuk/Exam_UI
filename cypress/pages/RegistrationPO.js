@@ -14,10 +14,10 @@ openRegform(){
 
 fillFields(){
     cy.log('Fill Email');
-    cy.get('#emailControl').type(user.email)//.should('have.value', user.email);
+    cy.get('#emailControl').type(user.email).should('have.value', user.email);
 
     cy.log('Fill Password');
-    cy.get('#passwordControl').type(user.password)//.should('have.value', user.password);
+    cy.get('#passwordControl').type(user.password).should('have.value', user.password);
 
     cy.log('Fill repeat Password')
     cy.get('#repeatPasswordControl').type(user.password).should('have.value', user.password);

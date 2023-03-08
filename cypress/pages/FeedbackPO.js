@@ -22,7 +22,7 @@ class Feedback{
         cy.log('Captcha math')
         cy.get('#captcha').then(($div) => {
             const text = $div.text()
-            cy.get('#captchaControl').type(eval(text))
+            cy.get('#captchaControl').type(eval(text)).should('have.value', eval(text) )
           })
     }
     submitButton(){

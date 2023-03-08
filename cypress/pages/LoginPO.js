@@ -22,5 +22,11 @@ class LoginWithUser{
         cy.get('[aria-label="Go to user profile"]').eq(1).type('{esc}');
                
     }
+    negativeTestCheckError(){
+        cy.log('click Login Button');
+        cy.get('#loginButton').click({force: true});
+        cy.get('.error.ng-star-inserted').should('contain', 'Invalid email or password.')
+    }
+    
 }
 export default new LoginWithUser();
