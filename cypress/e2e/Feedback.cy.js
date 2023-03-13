@@ -7,6 +7,9 @@ describe('Exam_UI', () => {
 
     it('Feedback', () => {
         openLoginPage();
+        FeedbackPO.openRegform()
+        FeedbackPO.fillFieldsReg()
+        FeedbackPO.clickButtonSubmit()
         LoginWithUser.fillEmail();
         LoginWithUser.fillPassword();
         LoginWithUser.clickLoginButton();

@@ -7,26 +7,35 @@ describe('Exam_UI', () => {
   it('Login', () => {
 
     openLoginPage();
+    LoginWithUser.openRegform()
+    LoginWithUser.fillFields()
+    LoginWithUser.clickButtonSubmit()
+
     LoginWithUser.fillEmail();
     LoginWithUser.fillPassword();
     LoginWithUser.clickLoginButton();
     LoginWithUser.checkLoginWithUser();
   })
 
-  it('Negative test. Empy Psw and Email', ()=>{
+  it('Negative test. False Psw and Email', ()=>{
     openLoginPage();
+    LoginWithUser.fillFalseEmail()
+    LoginWithUser.fillFalsePassword();
     LoginWithUser.negativeTestCheckError()
+    
   })
 
-  it('Negative test. Empy Email', ()=>{
+  it('Negative test. False Email', ()=>{
     openLoginPage();
     LoginWithUser.fillPassword();
+    LoginWithUser.fillFalseEmail()
     LoginWithUser.negativeTestCheckError()
   })
 
-  it('Negative test. Empy Password', ()=>{
+  it('Negative test. False Password', ()=>{
     openLoginPage();
     LoginWithUser.fillEmail();
+    LoginWithUser.fillFalsePassword();
     LoginWithUser.negativeTestCheckError()
   })
 

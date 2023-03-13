@@ -12,6 +12,6 @@ export function openLoginPage(){
 export function findProductOnMainPage(){
     cy.log('Click search button');
     cy.get('.ng-tns-c254-1.mat-search_icon-search').click();
-    cy.get('#mat-input-0').type('Melon Bike{enter}');
+    cy.get('#mat-input-0').type('Fruit Press{enter}');
 
 }

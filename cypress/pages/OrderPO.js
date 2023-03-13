@@ -12,12 +12,89 @@ user.city = faker.address.city();
 user.postCode = faker.address.zipCode('####');
 user.address = faker.address.streetAddress();
 user.state = faker.address.direction();
+user.email = faker.internet.email();
+user.password = faker.internet.password();
+user.answer = faker.name.firstName();
 
 class Order{
+
+    openRegform(){
+        cy.log('Click link for registration');
+        cy.get('#newCustomerLink .primary-link').click();
+    }
+
+    fillFieldsReg(){
+        cy.log('Fill Email');
+        cy.get('#emailControl').type(user.email).should('have.value', user.email);
+    
+        cy.log('Fill Password');
+        cy.get('#passwordControl').type(user.password).should('have.value', user.password);
+    
+        cy.log('Fill repeat Password')
+        cy.get('#repeatPasswordControl').type(user.password).should('have.value', user.password);
+    
+        cy.log('Choose questions')
+        cy.get('.mat-form-field-infix.ng-tns-c119-16').click()
+        cy.get('.mat-option-text').eq(1).click()
+    
+        cy.log('Answer questions')
+        cy.get('#securityAnswerControl').type(user.answer)//.should('have.value', user.answer)
+    }
+    
+    clickButtonSubmit(){
+        cy.log('Click button ')
+        cy.get('[type="submit"]').click();
+    }
+
+    fillEmail(){
+        cy.log('type Email in field');
+        cy.get("#email").type(user.email).should('have.value', user.email);
+    }
+    fillPassword(){
+        cy.log('type password in field');
+        cy.get("#password").type(user.password).should('have.value', user.password);
+    }
+    clickLoginButton(){
+        cy.log('click Login Button');
+        cy.get('#loginButton').click();
+        
+    }
+    checkLoginWithUser(){
+        cy.log('check Login With User');
+        cy.get('#navbarAccount').click();
+        cy.get('[aria-label="Go to user profile"]').eq(1).should('contain',user.email ); 
+        cy.get('[aria-label="Go to user profile"]').eq(1).type('{esc}');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //////////////////
     addToBasket(){
         cy.log('add To Basket');
+        cy.wait(1000)
         cy.get('[aria-label="Add to Basket"]').click();
-        //cy.get('span.mat-simple-snack-bar-content').should('contain', 'Placed Melon Bike (Comeback-Product 2018 Edition) into basket.')
+        
     }
     goToBasket(){
         cy.log('Click basked');

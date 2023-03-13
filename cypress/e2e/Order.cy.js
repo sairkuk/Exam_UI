@@ -10,13 +10,18 @@ describe('Exam_UI', () => {
 
     openLoginPage();
 
-    LoginWithUser.fillEmail();
-    LoginWithUser.fillPassword();
-    LoginWithUser.clickLoginButton();
-    LoginWithUser.checkLoginWithUser();
-
+    Order.openRegform()
+    Order.fillFieldsReg()
+    Order.clickButtonSubmit()
+    Order.fillEmail()
+    Order.fillPassword()
+    Order.clickLoginButton()
+    Order.checkLoginWithUser
+    // LoginWithUser.fillEmail();
+    // LoginWithUser.fillPassword();
+    // LoginWithUser.clickLoginButton();
+    // LoginWithUser.checkLoginWithUser();
     findProductOnMainPage();
-    
     Order.addToBasket();
     Order.goToBasket();
     Order.checkout();
